@@ -4,12 +4,12 @@ Demonstrates using (calling) FUNCTIONS and using (calling) METHODS:
   -- how they differ.
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Shihao,HAN.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ########################################################################
 #
-# TODO: 2.
+# DONE: 2.
 #   READ this comment, ASKING QUESTIONS as needed to understand it.
 #
 #   For objects that are CONSTRUCTED, we use the DOT notation
@@ -81,6 +81,9 @@ def main():
     draw_many_squares(turtle, 3, 75, 15)
     turtle3()
 
+    try_methods()
+    try_functions()
+    try_methods_and_functions()
     # When the TODOs ask you to test YOUR code, put YOUR tests here:
 
 
@@ -114,11 +117,11 @@ def jump_and_move_turtle(x1, y1, x2, y2):
 def draw_many_squares(my_turtle, number_of_squares, size, twist):
     """
     Makes the given   SimpleTurtle   object draw:
-      -- many squares (how many? answer: NUMBER_OF_SQUARES)
+      -- many squares (how many? answer: 3)
     where each square:
-      -- has the same size (what size? answer: SIZE)
+      -- has the same size (what size? answer: 75)
     and each square is:
-      -- "twisted" a bit from the previous one (how much? TWIST degrees)
+      -- "twisted" a bit from the previous one (how much? TWIST degrees 15)
 
     NOTE: The 3 lines below that begin with   :type   are called
     "type hints".  They make the "dot" trick work more effectively.
@@ -171,8 +174,14 @@ def try_methods():
       -- forward    50 units
       -- backward  100 units
     """
+    martin = rg.SimpleTurtle()
+    martin.pen = rg.Pen("sky blue", 20)
+    martin.forward(150)
+    martin.left(90)
+    martin.forward(50)
+    martin.backward(100)
     ####################################################################
-    # TODO: 3. Implement this function, per its doc-string above.
+    # DONE: 3. Implement this function, per its doc-string above.
     #    Put a statement in   main   to test this function
     #    (by calling this function).
     ####################################################################
@@ -185,8 +194,11 @@ def try_functions():
      -- One jumps to (100, 200), then moves (while drawing) to (0, 0)
      -- One jumps to (-50, 50), then moves (while drawing) to (100, 100)
     """
+    jump_and_move_turtle(200,100,300,30)
+    jump_and_move_turtle(100,200,0,0)
+    jump_and_move_turtle(-50,50,100,100)
     ####################################################################
-    # TODO: 4. Implement this function, per its doc-string above.
+    # DONE: 4. Implement this function, per its doc-string above.
     #    Put a statement in   main   to test this function
     #    (by calling this function).  IMPORTANT, IMPORTANT, IMPORTANT:
     #    Keep reading the rest of this TO DO before doing the above!
@@ -203,6 +215,8 @@ def try_methods_and_functions():
     """
     Constructs a SimpleTurtle and sets its   pen  to a new rg.Pen
     that is 'blue' with thickness 5.
+
+
 
     Then makes the SimpleTurtle do the following (in the order listed):
 
@@ -231,8 +245,23 @@ def try_methods_and_functions():
 
       8. Draw a SQUARE whose sides are each of length 50.
     """
+
+    john = rg.SimpleTurtle()
+    john.pen = rg.Pen("blue", 5)
+    john.backward(150)
+    john.speed = 1
+    draw_many_squares(john,2,100,30)
+    john.speed = 5
+    draw_many_squares(john,10,50,15)
+    john.speed = 100
+    john.pen = rg.Pen("blue",35)
+    draw_many_squares(john, 8, 300, 60)
+    john.prn = rg.Pen("black",3)
+    john.backward(200)
+    john.draw_circle(30)
+    draw_many_squares(john, 1, 50, 0)
     ####################################################################
-    # TODO: 5. Implement this function, per its doc-string above.
+    # DONE: 5. Implement this function, per its doc-string above.
     #    Put a statement in   main   to test this function
     #    (by calling this function).  IMPORTANT, IMPORTANT, IMPORTANT:
     #    Keep reading the rest of this TO DO before doing the above!
